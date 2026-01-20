@@ -5,15 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A romantic 3rd anniversary photo gallery — 36 moments, one love story."
+      content="A romantic 3rd anniversary photo gallery — 36 photos, one love story."
     />
-    <title>Happy 3rd anniversary, bibi! • 36 Moments</title>
+    <title>Happy 3rd anniversary, bibi!</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   </head>
   <body>
     <div class="bg" aria-hidden="true"></div>
     <div class="sparkles" aria-hidden="true"></div>
+
+    <!-- Simple love-lock gate -->
+    <div id="gate" class="gate" role="dialog" aria-modal="true" aria-label="Unlock our story">
+      <div class="gate__backdrop"></div>
+      <div class="gate__card">
+        <p class="gate__kicker">A question before the memories…</p>
+        <h1 class="gate__title">Where was our first kiss?</h1>
+        <p class="gate__hint">Type the place exactly how we remember it together.</p>
+        <form class="gate__form">
+          <label class="gate__label" for="gateAnswer">Your answer</label>
+          <input
+            id="gateAnswer"
+            class="gate__input"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Type your answer here"
+          />
+          <button id="gateSubmit" class="btn btn--primary gate__btn" type="submit">
+            Unlock our 3 years
+          </button>
+          <p id="gateError" class="gate__error" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
 
     <header class="topbar">
       <div class="container topbar__inner">
@@ -37,7 +62,7 @@
             <p class="kicker">Happy 3rd anniversary, bibi!</p>
             <h1>36 photos. One love story.</h1>
             <p class="subhead">
-              Start with a letter from my heart, then walk through 36 moments that tell our story.
+              Start with a letter from my heart, then walk through 36 photos that tell our story.
             </p>
 
             <div class="hero__actions">
@@ -59,7 +84,7 @@
               <div class="stat__value">3</div>
             </div>
             <div class="stat">
-              <div class="stat__label">Moments</div>
+              <div class="stat__label">Photos</div>
               <div class="stat__value">36</div>
             </div>
             <div class="stat">
@@ -118,7 +143,7 @@
               <span class="note__quote" aria-hidden="true">”</span>
             </p>
             <p style="margin-top:14px;color:var(--muted);">
-              When you’re ready, scroll down to <strong>walk through our 36 favorite moments</strong>.
+              When you’re ready, scroll down to <strong>walk through our 36 photos</strong>.
             </p>
           </div>
         </div>

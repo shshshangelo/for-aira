@@ -36,6 +36,14 @@ function buildPhotos() {
   return out;
 }
 
+function normalizeAnswer(raw) {
+  return raw
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function $(sel) {
   return /** @type {HTMLElement} */ (document.querySelector(sel));
 }
@@ -47,6 +55,79 @@ function setHeroMeta() {
     chips[1].textContent = `Date: ${CONFIG.dateLabel}`;
   }
   $("#year").textContent = String(new Date().getFullYear());
+}
+
+function launchConfetti() {
+  const layer = document.createElement("div");
+  layer.className = "confetti-layer";
+
+  const pieces = 120;
+  for (let i = 0; i < pieces; i += 1) {
+    const piece = document.createElement("span");
+    piece.className = "confetti-piece";
+    const x = (Math.random() * 200 - 100).toFixed(1) + "vw";
+    const delay = (Math.random() * 0.8).toFixed(2) + "s";
+    const dur = (2.6 + Math.random() * 1.6).toFixed(2) + "s";
+    piece.style.setProperty("--x", x);
+    piece.style.setProperty("--dur", dur);
+    piece.style.animationDelay = delay;
+    layer.appendChild(piece);
+  }
+
+  document.body.appendChild(layer);
+
+  window.setTimeout(() => {
+    layer.remove();
+  }, 4500);
+}
+
+function initGate() {
+  const gate = $("#gate");
+  if (!gate) return;
+
+  const passed = window.localStorage.getItem("gatePassed") === "true";
+  if (passed) {
+    gate.style.display = "none";
+    document.body.classList.remove("locked");
+    return;
+  }
+
+  document.body.classList.add("locked");
+
+  const input = /** @type {HTMLInputElement} */ ($("#gateAnswer"));
+  const btn = $("#gateSubmit");
+  const errorEl = $("#gateError");
+
+  const check = () => {
+    const value = normalizeAnswer(input.value);
+    // Accept variations like "in the cafe namoo", "cafe namoo", etc.
+    const isRight = /cafe\s+namoo/.test(value);
+
+    if (isRight) {
+      window.localStorage.setItem("gatePassed", "true");
+      gate.classList.add("gate--hide");
+      document.body.classList.remove("locked");
+      errorEl.textContent = "";
+      launchConfetti();
+      window.setTimeout(() => {
+        gate.style.display = "none";
+      }, 420);
+    } else {
+      errorEl.textContent = "Hint: It's a Cafe at City Times Square";
+    }
+  };
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    check();
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      check();
+    }
+  });
 }
 
 function renderGrid() {
@@ -251,6 +332,7 @@ function wireEvents() {
 }
 
 function main() {
+  initGate();
   setHeroMeta();
   photos = buildPhotos();
   originalPhotos = photos.map((p) => ({ ...p }));
