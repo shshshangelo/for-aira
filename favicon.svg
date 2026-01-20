@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Heart favicon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4d7d"/>
+      <stop offset="0.6" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#ffd2a6"/>
+    </linearGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#0f0a12"/>
+  <path
+    d="M32 50s-14-8.7-20.3-17.2C6.7 25.7 8.2 17.9 14.1 14.7c5-2.7 11 .2 13.7 4.7c2.7-4.5 8.7-7.4 13.7-4.7c5.9 3.2 7.4 11 2.4 18.1C46 41.3 32 50 32 50z"
+    fill="url(#g)"
+    filter="url(#s)"
+  />
+  <text x="32" y="39" text-anchor="middle" font-size="14" font-weight="900" fill="#0f0a12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial">
+    3
+  </text>
+</svg>
+

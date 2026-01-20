@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A romantic 3rd anniversary photo gallery — 36 moments, one love story."
+    />
+    <title>Happy 3rd anniversary, bibi! • 36 Moments</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+    <div class="sparkles" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="#top" aria-label="3rd Anniversary home">
+          <span class="brand__mark" aria-hidden="true">3</span>
+          <span class="brand__text">Anniversary</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#gallery">Gallery</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#note">Note</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <p class="kicker">Happy 3rd anniversary, bibi!</p>
+            <h1>36 photos. One love story.</h1>
+            <p class="subhead">
+              Start with a letter from my heart, then walk through 36 moments that tell our story.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#note">Read the letter</a>
+              <button class="btn btn--ghost" id="playBtn" type="button">
+                Play slideshow
+              </button>
+            </div>
+
+            <div class="meta">
+              <div class="meta__chip" title="Change this in script.js">For: Aira</div>
+              <div class="meta__chip" title="Change this in script.js">Date: Jan 20, 2026</div>
+            </div>
+          </div>
+
+          <div class="hero__card" role="group" aria-label="Highlights">
+            <div class="stat">
+              <div class="stat__label">Years</div>
+              <div class="stat__value">3</div>
+            </div>
+            <div class="stat">
+              <div class="stat__label">Moments</div>
+              <div class="stat__value">36</div>
+            </div>
+            <div class="stat">
+              <div class="stat__label">Theme</div>
+              <div class="stat__value">Romantic</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="note" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>A letter for you</h2>
+            <p class="note">
+              <span class="note__quote" aria-hidden="true">“</span>
+              Three years ago, I didn’t know that one person could become my favorite
+              place — my calm and my excitement at the same time. Somehow, without
+              forcing anything, you turned ordinary days into memories I never want to
+              forget, and quiet moments into the safest feeling in the world.
+              <br /><br />
+              We’ve had the sweet parts — the laughs that made my chest hurt, the
+              late-night talks that went deeper than we planned, the little routines
+              that became “us.” But I love us most for the honest parts… the ones that
+              weren’t always easy.
+              <br /><br />
+              There were moments when my work schedule got heavy and I got tired in
+              ways I didn’t know how to explain. Times when I felt like I was becoming
+              a burden instead of a partner. We almost broke up. We fought. We said
+              things because we were stressed, because we were scared, because we
+              cared too much and didn’t always know how to show it gently.
+              <br /><br />
+              And still — we fixed it. Not perfectly, not overnight… but we chose each
+              other again. We learned how to listen longer than our pride wanted to. We
+              learned how to apologize without keeping score. We learned that love
+              isn’t just the pretty moments — it’s the decision to come back, to repair,
+              to try again with softer hands.
+              <br /><br />
+              I love the way you look at me when you think I’m not paying attention.
+              I love the way you remember the tiniest details. I love how you can call
+              me out and still hold me close. I love how you make “home” feel like
+              wherever you are.
+              <br /><br />
+              And honestly… I never thought we’d be here celebrating our
+              Happy 3rd anniversary, bibi!
+              Not because I doubted you — but because life moves so fast, and the world
+              pulls hard, and we’ve had to fight for our calm. Somehow the days flew by,
+              and at the same time, every year has felt like a thousand little choices
+              that brought us closer.
+              <br /><br />
+              If I could rewind time and meet you again for the first time, I’d walk straight toward you and hold on a little tighter, a little sooner — even knowing we’d still have our stubborn moments and silly fights.
+              <br /><br />
+              Thank you for three beautiful years — for staying, for trying, for loving me through the messy parts, and for letting me love you the same way.
+              <br /><br />
+              Happy 3rd anniversary, bibi. 🤍
+              <span class="note__quote" aria-hidden="true">”</span>
+            </p>
+            <p style="margin-top:14px;color:var(--muted);">
+              When you’re ready, scroll down to <strong>walk through our 36 favorite moments</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>Gallery</h2>
+            <p>
+              After the words, the memories — tap any photo to open it full-screen. Use
+              arrows (or swipe) to navigate.
+            </p>
+          </div>
+
+          <div class="toolbar" role="group" aria-label="Gallery controls">
+            <button class="btn btn--small" id="shuffleBtn" type="button">Shuffle</button>
+            <button class="btn btn--small" id="resetBtn" type="button">Reset order</button>
+          </div>
+
+          <div id="grid" class="grid" aria-label="36 photo gallery"></div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <h2>Timeline</h2>
+            <p>Three chapters, one continuous yes.</p>
+          </div>
+
+          <ol class="timeline">
+            <li class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <h3>Year 1</h3>
+                <p>Firsts everywhere. Everything felt electric.</p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <h3>Year 2</h3>
+                <p>We built rhythms — little rituals that became home.</p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <h3>Year 3</h3>
+                <p>Soft love, strong love. The kind that stays.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>Made with love • <span id="year"></span></p>
+        <a class="footer__link" href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" data-close="true"></div>
+      <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <button class="iconbtn lightbox__close" type="button" data-close="true" aria-label="Close">
+          ✕
+        </button>
+
+        <button class="iconbtn lightbox__prev" type="button" id="prevBtn" aria-label="Previous photo">
+          ‹
+        </button>
+
+        <figure class="lightbox__figure">
+          <div class="lightbox__media" aria-hidden="true">
+            <img id="lightboxImg" alt="" />
+          </div>
+          <figcaption id="lightboxCaption" class="lightbox__caption"></figcaption>
+        </figure>
+
+        <button class="iconbtn lightbox__next" type="button" id="nextBtn" aria-label="Next photo">
+          ›
+        </button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+
